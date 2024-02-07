@@ -1,8 +1,9 @@
 #include <iostream>
 
-using namespace std;
+using std::cout;
 
-int main()
+int main(void)
 {
+    cout<<"hola clase\n";
     return 0;
 }
