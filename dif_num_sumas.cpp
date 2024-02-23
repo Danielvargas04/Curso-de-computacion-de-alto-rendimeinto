@@ -29,7 +29,7 @@ int main()
     float s1 = 0.0, s2 = 0.0;
     float delta;
     cout<<"N "<<"S1 "<<"S2 "<< "delta "<<endl;
-    for (int i = 2; i <= 1e6; i+=128)
+    for (int i = 2; i <= 10000; i+=1)
     {
         s1 = suma1(i);
         s2 = suma2(i);
