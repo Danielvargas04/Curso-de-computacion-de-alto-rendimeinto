@@ -11,3 +11,7 @@ data.txt: dif_num_sumas.x
 
 fig.pdf: script.gp data.txt
 	gnuplot script.gp
+
+.PHONY: clean
+clean:
+	rm -f *.o *~ *.x *.out 
