@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import norm
 
-def dispercion():
+def dispercion(data_path):
     #datos=pd.read_csv('data/histograma.dat',sep=' ', names=['x','y'])
-    datos=pd.read_csv('data/datoskuta.dat',sep=' ', names=['x','y','z'])
+    datos=pd.read_csv(data_path,sep=' ', names=['x','y','z'])
     fig, ax = plt.subplots()
     ax.plot(datos['x'], datos['y'], label = 'Posicion')
     ax.legend()
