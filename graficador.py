@@ -8,14 +8,19 @@ import numpy as np
 from scipy.stats import norm
 
 def dispercion(data_path):
-    #datos=pd.read_csv('data/histograma.dat',sep=' ', names=['x','y'])
-    datos=pd.read_csv(data_path,sep=' ', names=['x','y','z'])
+    datos=pd.read_csv(data_path, delim_whitespace=True , names=['x','Gamma'])
+
     fig, ax = plt.subplots()
-    ax.plot(datos['x'], datos['y'], label = 'Posicion')
+    ax.scatter(datos['x'], datos['Gamma'], label = 'Gamma', s=10)
+    ax.set_xlabel("x")
+    ax.set_ylabel("Gamma (x)")
+    ax.set_yscale("log")
     ax.legend()
     ax.grid(True)
-    ax.set_title('Oscilador armonico resuelto con Rungekuta')
+    ax.set_title('Funcon Gamma')
     plt.show()
+
+dispercion("data/datosGamma.dat")
 
 def histograma(data_path):
     # Cargar los datos del archivo .dat
