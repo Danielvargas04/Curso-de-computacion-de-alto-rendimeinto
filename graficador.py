@@ -24,7 +24,7 @@ def histograma(data_path):
     #Funcion teorica
     ejex=np.linspace(2.7, 4.6, 50)
     gauss=norm.pdf(ejex,3.5,0.4)
-    ejey=gauss/gauss.sum()
+    ejey=gauss
 
     #ancho de cada bin
     bin_ancho = data['x'][1]-data['x'][0]
@@ -37,11 +37,11 @@ def histograma(data_path):
     #         edgecolor='black', label="Seed:2", color= 'orange', alpha=0.3)
     #ax.hist(data['x'], bins=data['x'].size, weights=data['conteo3'], density =True,
     #         edgecolor='black', label="Seed:5", color= 'green', alpha=0.3)
-    ax.scatter(data['x'],data['conteo1']/data['conteo1'].sum(), color= 'blue',
+    ax.scatter(data['x'],data['p(x)1'], color= 'blue',
                 marker='.', alpha=0.5, label="Seed:1")
-    ax.scatter(data['x'],data['conteo2']/data['conteo2'].sum(), color= 'orange',
+    ax.scatter(data['x'],data['p(x)2'], color= 'orange',
                marker='.', alpha=0.5, label="Seed:2")
-    ax.scatter(data['x'],data['conteo3']/data['conteo3'].sum(), color= 'green',
+    ax.scatter(data['x'],data['p(x)3'], color= 'green',
                 marker='.', alpha=0.5, label="Seed:5")
     ax.plot(ejex,ejey, color='red', label='Teorica')
     ax.set_xlabel('x: Numero aleatorio')
