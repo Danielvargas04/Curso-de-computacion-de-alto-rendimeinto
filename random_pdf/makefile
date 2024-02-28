@@ -7,7 +7,7 @@ random_pdf.x: random_pdf.cpp
 	./random_pdf.x 1 5000 3.5 0.4 2.7 4.6 50 > ./tmp.dat
 	./random_pdf.x 2 5000 3.5 0.4 2.7 4.6 50 | awk '{print $$2}' > ./tmp2.dat
 	./random_pdf.x 5 5000 3.5 0.4 2.7 4.6 50 | awk '{print $$2}' > ./tmp3.dat
-	paste ./tmp.dat ./tmp2.dat ./tmp3.dat | awk 'NR==1{print "x\tconteo1\tconteo2\tconteo3"} NR>1{print}' > ../data/histograma_rand.dat
+	paste ./tmp.dat ./tmp2.dat ./tmp3.dat | awk 'NR==1{print "x\tp(x)1\tp(x)2\tp(x)3"} NR>1{print}' > ../data/histograma_rand.dat
 	rm ./tmp.dat ./tmp2.dat ./tmp3.dat
 
 random_pdf.pdf: ../graficador.py ../data/histograma_rand.dat

@@ -38,10 +38,12 @@ void compute_pdf(int seed, int nsamples, double mu, double sigma, double xmin, d
     }
   }
   //Compute and print the pdf
-  std::cout << "x" <<"\t"<<"Conteo"<< std::endl;
+  int total_numbers = std::accumulate(histogram.begin(), histogram.end(), 0);
+
+  std::cout << "x" <<"\t"<<"p(x)"<< std::endl;
   for (int i = 0; i < nbins; i++)
   {
-    std::cout << xmin + i * ancho_bin <<"\t"<<histogram[i]<< std::endl;
+    std::cout << xmin + i * ancho_bin <<"\t"<<histogram[i]/(total_numbers*ancho_bin)<< std::endl;
   }
   
 }
