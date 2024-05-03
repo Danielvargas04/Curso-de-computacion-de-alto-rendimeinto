@@ -1,2 +1,11 @@
 **/.vscode/
 **/Cream_drop/
+**/**.json
+**/**.txt
+**/**.x
+**/**.out
+**/**.dat
+**/**.gif
+**/**.pdf
+**/**.gp
+**/graficador.py

@@ -8,19 +8,23 @@ import numpy as np
 from scipy.stats import norm
 
 def dispercion(data_path):
-    datos=pd.read_csv(data_path, delim_whitespace=True , names=['x','Gamma'])
+    datos=pd.read_csv(data_path, delim_whitespace=True , names=['N','S', 'E'])
 
-    fig, ax = plt.subplots()
-    ax.scatter(datos['x'], datos['Gamma'], label = 'Gamma', s=10)
-    ax.set_xlabel("x")
-    ax.set_ylabel("Gamma (x)")
-    ax.set_yscale("log")
-    ax.legend()
-    ax.grid(True)
-    ax.set_title('Funcon Gamma')
-    plt.show()
+    fig, ax = plt.subplots(2, 1, figsize = (8,10))
+    ax[0].scatter(datos['N'], datos['S'], label = 'S', s=10)
+    ax[0].set_xlabel("NThreads")
+    ax[0].set_ylabel("Speedup")
+    ax[0].legend()
+    ax[0].grid(True)
+    ax[0].set_title('Speed up')
 
-dispercion("data/datosGamma.dat")
+    ax[1].scatter(datos['N'], datos['E'], label = 'E', s=10)
+    ax[1].set_xlabel("NThreads")
+    ax[1].set_ylabel("Eficiency")
+    ax[1].legend()
+    ax[1].grid(True)
+    ax[1].set_title('Eficiency')
+    plt.savefig('image/metrics.pdf')
 
 def histograma(data_path):
     # Cargar los datos del archivo .dat
@@ -63,4 +67,4 @@ if __name__ == "__main__":
 
     data_path = sys.argv[1]
     
-    histograma(data_path)
+    dispercion(data_path)
