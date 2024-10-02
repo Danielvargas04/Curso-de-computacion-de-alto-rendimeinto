@@ -1,0 +1,1 @@
+Repositorio de las notas de clase de computacion de alto rendimiento, especializado en c++ con enfazis en buenas practicas de programacion, paralelizacion, manejo de clusters, modularizacion entre otras herramientas.
